@@ -1,0 +1,18 @@
+<import src="/components/uni-icon.vue.wxml" />
+<import src="/components/uni-drawer.vue.wxml" />
+<template name="aff88a12">
+  <view class="_view data-v-4f1758e8">
+    <view class="_view data-v-4f1758e8 warp" style=" {{('height:' + (winHeight + 'px') + ';')}}">
+      <view class="_view data-v-4f1758e8 warp-child menu {{menuBlean ? 'menu-active' : ''}}"></view>
+      <view class="_view data-v-4f1758e8 warp-child content {{menuBlean ? 'content-active' : ''}}">
+        <view class="_header data-v-4f1758e8">
+          <template type="bars" color="#333333" size="30" bindtap="handleProxy" data-eventid="{{'MwT-0'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'WxA-0'],$root}}" is="f3185d7a"></template>
+          <template type="more" color="#333333" size="30" bindtap="handleProxy" data-eventid="{{'aBj-1'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'oAM-1'],$root}}" is="f3185d7a"></template>
+        </view>
+      </view>
+      <view style="clear: both;" class="_view data-v-4f1758e8"></view>
+      <view class="_view data-v-4f1758e8 mask-warp" wx:if="{{drawerBlean}}" bindtap="handleProxy" data-eventid="{{'nhM-2'}}" data-comkey="{{$k}}"></view>
+      <template mode="right" data="{{...$root['0'], ...$root[$kk+'Bl9-2'],$root, $slotdefault:'data-v-4f1758e8-default-Bl9-2'}}" is="2ea1ad3b"></template>
+    </view>
+  </view>
+</template>
