@@ -4,8 +4,12 @@
 			<view class="warp-child menu" :class="menuBlean?'menu-active':''"></view>
 			<view class="warp-child content" :class="menuBlean?'content-active':''" >
 				<header>
-					<uni-icon type="bars" class = "bars" color="#333333" size="30" @click='menu'></uni-icon>
-					<uni-icon type="more" class = "more" color="#333333" size="30" @click="drwer"></uni-icon>
+					<view class = "bars">
+						<uni-icon type="bars"  color="#333333" size="30" @click='menu'></uni-icon>
+					</view>
+					<view class = "more">
+						<uni-icon type="more" color="#333333" size="30" @click="drwer"></uni-icon>
+					</view>
 				</header>
 			</view>
 			<view style="clear: both;"></view>
@@ -170,11 +174,15 @@
 	from {left:20%;}
 	to {left:0%;}
 	}
-	.uni-icon-more {
+	.more {
+		width: 30px;
+		height: 30px;
 		position: absolute;
 		left:90% ;
 	}
-	.uni-icon-bars {
+	.bars {
+		width: 30px;
+		height: 30px;
 		position: absolute;
 		left:3% ;
 	}

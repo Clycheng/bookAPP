@@ -100,11 +100,15 @@ to {
     left: 0%;
 }
 }
-.uni-icon-more.data-v-4f1758e8 {
+.more.data-v-4f1758e8 {
+  width: 30px;
+  height: 30px;
   position: absolute;
   left: 90%;
 }
-.uni-icon-bars.data-v-4f1758e8 {
+.bars.data-v-4f1758e8 {
+  width: 30px;
+  height: 30px;
   position: absolute;
   left: 3%;
 }
