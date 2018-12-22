@@ -1,7 +1,7 @@
 {
-    "name" : "UniApp",
+    "name" : "每日一书（晓磊）",
     "appid" : "__UNI__422FF50",
-    "description" : "demo",
+    "description" : "每日一书demo版",
     "versionName" : "1.0.0",
     "versionCode" : "100",
     "transformPx" : false,
@@ -39,11 +39,12 @@
             "sdkConfigs" : {
                 "speech" : {
                     "ifly" : {}
-                }
+                },
+                "oauth" : {}
             },
             "icons" : {
                 "ios" : {
-                    "appstore" : "C:/Users/Clydecheng/Desktop/临时文件/教育/pointer.png",
+                    "appstore" : "C:/Users/Clydecheng/Desktop/临时文件/110_c983a30916ecc3056d4ea2af798b8107_con.png",
                     "ipad" : {
                         "app" : "unpackage/res/icons/76x76.png",
                         "app@2x" : "unpackage/res/icons/152x152.png",
@@ -74,10 +75,18 @@
                     "xxhdpi" : "unpackage/res/icons/144x144.png",
                     "xxxhdpi" : "unpackage/res/icons/192x192.png"
                 }
+            },
+            "splashscreen" : {
+                "android" : {
+                    "hdpi" : "C:/Users/Clydecheng/Desktop/1.png",
+                    "xhdpi" : "C:/Users/Clydecheng/Desktop/1.png",
+                    "xxhdpi" : "C:/Users/Clydecheng/Desktop/1.png"
+                }
             }
         },
         "splashscreen" : {
-            "waiting" : true
+            "waiting" : true,
+            "delay" : 1
         }
     },
     /* SDK配置 */

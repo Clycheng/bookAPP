@@ -2,7 +2,7 @@
 	<view>
 		<view class="warp" :style="{height:winHeight+'px'}">
 			<view class="warp-child menu" :class="menuBlean?'menu-active':''"></view>
-			<view class="warp-child content" :class="menuBlean?'content-active':''" >
+			<view class="warp-child content" :class="menuBlean?'content-active':''" @touchstart="touchStrat" @touchmove="touchMove"  @touchend="touchEnd">
 				<header>
 					<view class = "bars">
 						<uni-icon type="bars"  color="#333333" size="30" @click='menu'></uni-icon>
@@ -12,6 +12,7 @@
 					</view>
 				</header>
 			</view>
+			<view class = "content-top-mask" v-if="menuBlean" :style="{height:winHeight+'px'}" @click="menu"></view>
 			<view style="clear: both;"></view>
 			<view class="mask-warp" v-if="drawerBlean" @click="drwer">
 				</view>
@@ -40,9 +41,14 @@
 	export default {
 		data() {
 			return {
+				winWidth:'',
 				winHeight: '',
 				drawerBlean:false,
-				menuBlean:false
+				menuBlean:false,
+				PageStartX:'',
+				PageEndX:'',
+				PageStratY:'',
+				PageEndY:''
 
 			}
 		},
@@ -59,6 +65,7 @@
 							console.log(res.windowWidth);
 							console.log(res.windowHeight);
 							that.winHeight= res.windowHeight
+							that.winWidth = res.windowWidth;
 						  },
 						})
 				}else{
@@ -68,15 +75,11 @@
 							console.log(res.windowWidth);
 							console.log(res.windowHeight);
 							that.winHeight= res.windowHeight
+							that.winWidth = res.windowWidth;
 						},
 						})
 				}
-
-			// console.log(navigationBarTitleText
 			
-			// console.log(document.body.clientHeight);
-			console.log(this.winHeight)
-			var that = this;
 		},
 
 		methods: {
@@ -101,7 +104,70 @@
 					}else{
 						this.menuBlean = false;
 					}
+			},
+			// 判断左右滑动
+			touchStrat:function(e){
+				// console.log(e);
+				// 小程序规范
+				//#ifdef MP-WEIXIN
+					if(uni.getSystemInfoSync().platform === 'devtools'){
+						this.PageStartX =e.clientX
+						this.PageStartY =e.clientY
+					}else{
+						this.PageStartX =e.clientX
+						this.PageStartY =e.clientY
+					}
+				// #endif
+				// H5平台规范
+				// #ifdef APP-PLUS
+					this.PageStartX = e.changedTouches[0].pageX
+					this.PageStratY = e.changedTouches[0].pageY
+				// #endif
+			},
+			touchMove:function(e){
+				//#ifdef MP-WEIXIN
+				if(uni.getSystemInfoSync().platform === 'devtools'){
+					this.PageEndX =e.clientX
+					this.PageEndY =e.clientY
+				}else{
+					this.PageEndX =e.clientX
+					this.PageEndY =e.clientY
+				}
+				//#endif
+				
+				// #ifdef APP-PLUS
+				this.PageEndX = e.changedTouches[0].pageX
+				this.PageEndY = e.changedTouches[0].pageY
+				// #endif
+			},
+			touchEnd:function(e){
+				console.log(this.winWidth)
+				// 当菜单没有被点开
+				if(!this.menuBlean){
+					// 手指到最左边才执行	
+					if (this.PageStartX <100){
+							var diffVal = this.PageStartX -this.PageEndX;
+							if(diffVal <-100){
+								this.menuBlean= true;
+							}
+							
+					}else if(this.winWidth-this.PageStartX <100){ 
+						var diffVal = this.PageStartX -this.PageEndX;
+						if(diffVal >100){
+							this.drawerBlean= true;
+						}
+					}else{
+						return true;
+					}
+				//当菜单被点开 
+				}else if(this.menuBlean){
+					console.log(1);
+					
+				}
+				
+// 				
 			}
+			
 		}
 	}
 </script>
@@ -130,6 +196,7 @@
 		z-index: 1;
 		animation:menuMove 0.5s 1;
 	}
+	
 	/*菜单运动*/
 	@keyframes menuMove{
 		from {
@@ -162,6 +229,14 @@
 		left: 20%;
 		animation:mymove 0.5s 1;
 		
+	}
+	/* 内容蒙层 */
+	.content-top-mask {
+		position: fixed;
+		width: 80%;
+		left:20%;
+		/* background: #FFB400; */
+		z-index: 9999;
 	}
 	/* css3动画 */
 	@keyframes mymove

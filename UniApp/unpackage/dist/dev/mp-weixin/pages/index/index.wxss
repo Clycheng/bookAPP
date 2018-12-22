@@ -68,6 +68,12 @@ to {
   -webkit-animation: mymove-data-v-4f1758e8 0.5s 1;
   animation: mymove-data-v-4f1758e8 0.5s 1;
 }
+.content-top-mask.data-v-4f1758e8 {
+  position: fixed;
+  width: 80%;
+  left: 20%;
+  z-index: 9999;
+}
 @-webkit-keyframes mymove {
 from {
     left: 0%;

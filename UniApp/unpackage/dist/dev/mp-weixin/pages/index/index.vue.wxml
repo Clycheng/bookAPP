@@ -4,19 +4,20 @@
   <view class="_view data-v-4f1758e8">
     <view class="_view data-v-4f1758e8 warp" style=" {{('height:' + (winHeight + 'px') + ';')}}">
       <view class="_view data-v-4f1758e8 warp-child menu {{menuBlean ? 'menu-active' : ''}}"></view>
-      <view class="_view data-v-4f1758e8 warp-child content {{menuBlean ? 'content-active' : ''}}">
+      <view class="_view data-v-4f1758e8 warp-child content {{menuBlean ? 'content-active' : ''}}" bindtouchstart="handleProxy" bindtouchmove="handleProxy" bindtouchend="handleProxy" data-eventid="{{'r3n-2'}}" data-comkey="{{$k}}">
         <view class="_header data-v-4f1758e8">
           <view class="_view data-v-4f1758e8 bars">
-            <template type="bars" color="#333333" size="30" bindtap="handleProxy" data-eventid="{{'0qF-0'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'GCz-0'],$root}}" is="f3185d7a"></template>
+            <template type="bars" color="#333333" size="30" bindtap="handleProxy" data-eventid="{{'wuL-0'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'vVi-0'],$root}}" is="f3185d7a"></template>
           </view>
           <view class="_view data-v-4f1758e8 more">
-            <template type="more" color="#333333" size="30" bindtap="handleProxy" data-eventid="{{'nBL-1'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'7wr-1'],$root}}" is="f3185d7a"></template>
+            <template type="more" color="#333333" size="30" bindtap="handleProxy" data-eventid="{{'e6s-1'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'w11-1'],$root}}" is="f3185d7a"></template>
           </view>
         </view>
       </view>
+      <view class="_view data-v-4f1758e8 content-top-mask" wx:if="{{menuBlean}}" bindtap="handleProxy" data-eventid="{{'PLq-3'}}" data-comkey="{{$k}}" style=" {{('height:' + (winHeight + 'px') + ';')}}"></view>
       <view style="clear: both;" class="_view data-v-4f1758e8"></view>
-      <view class="_view data-v-4f1758e8 mask-warp" wx:if="{{drawerBlean}}" bindtap="handleProxy" data-eventid="{{'bDf-2'}}" data-comkey="{{$k}}"></view>
-      <template mode="right" data="{{...$root['0'], ...$root[$kk+'xFf-2'],$root, $slotdefault:'data-v-4f1758e8-default-xFf-2'}}" is="2ea1ad3b"></template>
+      <view class="_view data-v-4f1758e8 mask-warp" wx:if="{{drawerBlean}}" bindtap="handleProxy" data-eventid="{{'VdX-4'}}" data-comkey="{{$k}}"></view>
+      <template mode="right" data="{{...$root['0'], ...$root[$kk+'zky-2'],$root, $slotdefault:'data-v-4f1758e8-default-zky-2'}}" is="2ea1ad3b"></template>
     </view>
   </view>
 </template>
