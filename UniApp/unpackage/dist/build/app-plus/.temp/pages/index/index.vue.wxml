@@ -1,23 +1,46 @@
 <import src="/components/uni-icon.vue.wxml" />
 <import src="/components/uni-drawer.vue.wxml" />
-<template name="aff88a12">
-  <view class="_view data-v-4f1758e8">
-    <view class="_view data-v-4f1758e8 warp" style=" {{('height:' + (winHeight + 'px') + ';')}}">
-      <view class="_view data-v-4f1758e8 warp-child menu {{menuBlean ? 'menu-active' : ''}}"></view>
-      <view class="_view data-v-4f1758e8 warp-child content {{menuBlean ? 'content-active' : ''}}">
-        <view class="_header data-v-4f1758e8">
-          <view class="_view data-v-4f1758e8 bars">
-            <template type="bars" color="#333333" size="30" bindtap="handleProxy" data-eventid="{{'vZb-0'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'3MR-0'],$root}}" is="f3185d7a"></template>
-          </view>
-          <view class="_view data-v-4f1758e8 more">
-            <template type="more" color="#333333" size="30" bindtap="handleProxy" data-eventid="{{'3GR-1'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'bxC-1'],$root}}" is="f3185d7a"></template>
-          </view>
+<template name="515f384a">
+  <view id="app" class="_view data-v-7fe2a5c2" style=" {{('height:' + (winHeight + 'px') + ';')}}">
+    <button bindtap="handleProxy" data-eventid="{{'62F-0'}}" data-comkey="{{$k}}" class="_button data-v-7fe2a5c2">加载</button>
+    <view class="_view data-v-7fe2a5c2 warp" style=" {{('height:' + (winHeight + 'px') + ';')}}">
+      <view class="_view data-v-7fe2a5c2 warp-child menu {{menuBlean ? 'menu-active' : ''}}">
+        <view class="_view data-v-7fe2a5c2 menu-warp">
+          <ui class="_ui data-v-7fe2a5c2">
+            <view class="_li data-v-7fe2a5c2">
+              <template type="star" size="17" data="{{...$root['0'], ...$root[$kk+'5yR-0'],$root}}" is="1539d127"></template>我的收藏</view>
+            <view class="_li data-v-7fe2a5c2">
+              <template type="gear" size="17" data="{{...$root['0'], ...$root[$kk+'0hE-1'],$root}}" is="1539d127"></template>阅读设置</view>
+            <view class="_li data-v-7fe2a5c2">
+              <template type="chatbubble" size="17" data="{{...$root['0'], ...$root[$kk+'7PF-2'],$root}}" is="1539d127"></template>给个好评</view>
+          </ui>
         </view>
       </view>
-      <view class="_view data-v-4f1758e8 content-top-mask" wx:if="{{menuBlean}}" bindtap="handleProxy" data-eventid="{{'d1E-2'}}" data-comkey="{{$k}}" style=" {{('height:' + (winHeight + 'px') + ';')}}"></view>
-      <view style="clear: both;" class="_view data-v-4f1758e8"></view>
-      <view class="_view data-v-4f1758e8 mask-warp" wx:if="{{drawerBlean}}" bindtap="handleProxy" data-eventid="{{'E4h-3'}}" data-comkey="{{$k}}"></view>
-      <template mode="right" data="{{...$root['0'], ...$root[$kk+'SK9-2'],$root, $slotdefault:'data-v-4f1758e8-default-SK9-2'}}" is="2ea1ad3b"></template>
+      <view class="_view data-v-7fe2a5c2 warp-child content {{menuBlean ? 'content-active' : ''}}">
+        <view class="_header data-v-7fe2a5c2">
+          <view class="_view data-v-7fe2a5c2 bars">
+            <template type="bars" color="#333333" size="30" bindtap="handleProxy" data-eventid="{{'ctz-1'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'xNk-4'],$root}}" is="1539d127"></template>
+          </view>
+          <view class="_view data-v-7fe2a5c2 title">
+            <view wx:if="{{HTitle}}" class="_h3 data-v-7fe2a5c2">{{dayContent.title}}</view>
+          </view>
+          <view class="_view data-v-7fe2a5c2 more">
+            <template type="more" color="#333333" size="30" bindtap="handleProxy" data-eventid="{{'0BZ-2'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'5lo-5'],$root}}" is="1539d127"></template>
+          </view>
+        </view>
+        <view bindtouchstart="handleProxy" bindtouchmove="handleProxy" bindtouchend="handleProxy" data-eventid="{{'KkS-4'}}" data-comkey="{{$k}}" class="_section data-v-7fe2a5c2" style=" {{('height:' + (secHeight + 'px') + ';')}}">
+          <scroll-view scroll-y bindscrolltolower="handleProxy" data-eventid="{{'M5B-3'}}" data-comkey="{{$k}}" class="_scroll-view data-v-7fe2a5c2" style=" {{('height:' + (secHeight + 'px') + ';')}}">
+            <view class="_p data-v-7fe2a5c2">{{dayContent.title}}</view>
+            <view class="_p data-v-7fe2a5c2">—————— · ——————</view>
+            <view style="color:#8F8F94;text-align: center;" class="_p data-v-7fe2a5c2">{{dayContent.author}}</view>
+            <rich-text nodes="{{dayContent.content}}" class="_rich-text data-v-7fe2a5c2"></rich-text>
+          </scroll-view>
+        </view>
+      </view>
+      <view class="_view data-v-7fe2a5c2 content-top-mask" wx:if="{{menuBlean}}" bindtap="handleProxy" data-eventid="{{'amd-5'}}" data-comkey="{{$k}}" style=" {{('height:' + (winHeight + 'px') + ';')}}"></view>
+      <view style="clear: both;" class="_view data-v-7fe2a5c2"></view>
+      <view class="_view data-v-7fe2a5c2 mask-warp" wx:if="{{drawerBlean}}" bindtap="handleProxy" data-eventid="{{'y5h-6'}}" data-comkey="{{$k}}"></view>
+      <template mode="right" data="{{...$root['0'], ...$root[$kk+'f7e-7'],$root}}" is="23e7441f"></template>
     </view>
   </view>
 </template>

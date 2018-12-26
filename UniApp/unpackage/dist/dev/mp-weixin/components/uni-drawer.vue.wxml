@@ -1,9 +1,36 @@
 <import src="/components/slots" />
-<template name="2ea1ad3b">
-  <view class="_view data-v-65c05ce5 uni-drawer {{[visible ? 'uni-drawer-visible' : '', rightMode ? 'uni-drawer-right' : '']}}" catchtouchmove="{{catchtouchmove}}">
-    <template name="default"></template>
-    <view wx:if="{{showMask}}" class="_view data-v-65c05ce5 uni-drawer-mask" bindtap="handleProxy" data-eventid="{{'ORr-0'}}" data-comkey="{{$k}}"></view>
-    <view class="_view data-v-65c05ce5 uni-drawer-content">
+<import src="/components/uni-icon.vue.wxml" />
+<template name="23e7441f">
+  <view class="_view data-v-25f4bd9c uni-drawer {{[visible ? 'uni-drawer-visible' : '', rightMode ? 'uni-drawer-right' : '']}}" catchtouchmove="{{catchtouchmove}}">
+    <template name="default">
+      <view style="padding:10rpx;" class="_view data-v-25f4bd9c">
+        <view class="_view data-v-25f4bd9c uni-title">想要干哈？</view>
+        <view class="_view data-v-25f4bd9c uni-list uni-common-mt">
+          <view class="_view data-v-25f4bd9c uni-list-cell" hover-class="uni-list-cell-hover" bindtap="handleProxy" data-eventid="{{'7r7-1'}}" data-comkey="{{$k}}">
+            <view class="_view data-v-25f4bd9c uni-list-cell-navigate uni-navigate-right coll">收藏
+              <template size="30" data="{{...$root['0'], ...$root[$kk+'dOT-0'],$root}}" is="1539d127"></template>
+            </view>
+          </view>
+          <view class="_view data-v-25f4bd9c uni-list-cell " hover-class="uni-list-cell-hover">
+            <view class="_view data-v-25f4bd9c uni-list-cell-navigate uni-navigate-right share">分享
+              <template type="paperplane" size="30" data="{{...$root['0'], ...$root[$kk+'cSu-1'],$root}}" is="1539d127"></template>
+            </view>
+          </view>
+          <view class="_view data-v-25f4bd9c uni-list-cell" hover-class="uni-list-cell-hover">
+            <view class="_view data-v-25f4bd9c uni-list-cell-navigate uni-navigate-right coll">前一天
+              <template type="undo" size="30" data="{{...$root['0'], ...$root[$kk+'lBj-2'],$root}}" is="1539d127"></template>
+            </view>
+          </view>
+          <view class="_view data-v-25f4bd9c uni-list-cell uni-list-cell-last" hover-class="uni-list-cell-hover">
+            <view class="_view data-v-25f4bd9c uni-list-cell-navigate uni-navigate-right coll">随机
+              <template type="refresh" size="30" data="{{...$root['0'], ...$root[$kk+'MAD-3'],$root}}" is="1539d127"></template>
+            </view>
+          </view>
+        </view>
+      </view>
+    </template>
+    <view wx:if="{{showMask}}" class="_view data-v-25f4bd9c uni-drawer-mask" bindtap="handleProxy" data-eventid="{{'cOj-0'}}" data-comkey="{{$k}}"></view>
+    <view class="_view data-v-25f4bd9c uni-drawer-content">
       <template data="{{...$root['0'], ...$root[$k], $root}}" is="{{$slotdefault || 'default'}}"></template>
     </view>
   </view>

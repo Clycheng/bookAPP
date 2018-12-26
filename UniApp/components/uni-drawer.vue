@@ -2,12 +2,31 @@
 	<view class="uni-drawer" :catchtouchmove="catchtouchmove" :class="{'uni-drawer-visible':visible,'uni-drawer-right':rightMode}">
 		<view v-if="showMask" class="uni-drawer-mask" @tap="close"></view>
 		<view class="uni-drawer-content">
-			<slot></slot>
+			<slot><view style="padding:10upx;">
+					<view class="uni-title">想要干哈？</view>
+					<view class="uni-list uni-common-mt">
+						<view class="uni-list-cell" hover-class="uni-list-cell-hover" @click="coll" >
+							<view class="uni-list-cell-navigate uni-navigate-right coll">收藏<uni-icon :type="callIcon" size="30"></uni-icon></view>
+						</view>
+						<view class="uni-list-cell " hover-class="uni-list-cell-hover">
+							<view class="uni-list-cell-navigate uni-navigate-right share">分享<uni-icon type="paperplane" size="30" ></uni-icon>
+							</view>
+
+						</view>
+						<view class="uni-list-cell" hover-class="uni-list-cell-hover">
+							<view class="uni-list-cell-navigate uni-navigate-right coll">前一天<uni-icon type="undo" size="30" ></uni-icon></view>
+						</view>
+						<view class="uni-list-cell uni-list-cell-last" hover-class="uni-list-cell-hover">
+							<view class="uni-list-cell-navigate uni-navigate-right coll">随机<uni-icon type="refresh" size="30" ></uni-icon></view>
+						</view>
+					</view>
+				</view></slot>
 		</view>
 	</view>
 </template>
 
 <script>
+	import uniIcon from "@/components/uni-icon.vue"
 	export default {
 		props: {
 			/**
@@ -32,13 +51,17 @@
 		data() {
 			return {
 				rightMode: false,
-				catchtouchmove: false
+				catchtouchmove: false,
+				callIcon:"star"
 			}
 		},
 		computed: {
 			showMask() {
 				return String(this.mask) === 'true'
 			}
+		},
+		components:{
+			uniIcon
 		},
 		created() {
 			this.rightMode = this.mode === 'right'
@@ -49,6 +72,16 @@
 		methods: {
 			close() {
 				this.$emit('close')
+			},
+			coll:function(){
+				console.log(this.callIcon)
+				// this.callIcon='star'?'star-filled':'star'
+				if(this.callIcon == 'star'){
+					this.callIcon = 'star-filled'
+				}else if(this.callIcon == 'star-filled'){
+					this.callIcon = 'star'
+				}
+				
 			}
 		}
 	}
@@ -107,4 +140,12 @@
 	.uni-drawer.uni-drawer-visible>.uni-drawer-content {
 		transform: translatex(0);
 	}
+	
+	/* 修改icon */
+		.uni-navigate-right:after {
+			content: '';
+			width: 0;
+			height: 0;
+	
+		}
 </style>

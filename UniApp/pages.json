@@ -3,15 +3,15 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "观止"
+				"navigationBarTitleText": ""
 			}
 		}
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "观止",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarBackgroundColor": "#fef8e8",
+		"backgroundColor": "#fef8e8"
 	},
 	"condition": { //模式配置，仅开发期间生效
     "current": 0, //当前激活的模式（list 的索引项）
